@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from './UserContext';
+import cheesyPizza from './images/cheesy-pizza.jpg'
 
 export default function SignUp() {
 
@@ -42,6 +43,7 @@ export default function SignUp() {
                 <button type='submit'>Sign-up!</button>
                 <p>Already have an account? <Link to='/SignIn'>Sign in</Link></p>
             </form>
+            <img width='50%' src={cheesyPizza} alt='cheesy pizza' />
         </div>
     </>)
 }

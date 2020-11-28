@@ -1,10 +1,12 @@
 import React from 'react';
+import pizzaIngredients from './images/pizza-ingredients.jpg';
 
 export default function Randomize() {
     return (
         <>
             <div>
                 <h1>Let's get started!</h1>
+                <img width='50%' src={pizzaIngredients} alt='pizza ingredients' />
             </div>
             <div>
                 <h2>Feeling spontaneous?</h2>
