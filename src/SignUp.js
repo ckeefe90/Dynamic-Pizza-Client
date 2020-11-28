@@ -6,6 +6,7 @@ export default function SignUp() {
 
     const userContext = useContext(UserContext);
     const history = useHistory();
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState();
 
     function handleSubmit(e) {

@@ -10,7 +10,7 @@ export default function Header(props) {
             <nav>
                 <div className='leftNav'>
                     <Link to='/'>
-                        <p>[<em>Placeholder for pizza icon</em>]</p>
+                        <i class="fas fa-pizza-slice"></i>
                         Dynamic Pizza Generator
                     </Link>
                     {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>}

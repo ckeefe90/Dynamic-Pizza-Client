@@ -23,10 +23,10 @@ Users can delete the pizzas.
 
 ## Live App
 
-
+https://dynamic-pizza-client.vercel.app/
 
 ## Server Repository
 
-
+https://github.com/ckeefe90/Dynamic-Pizza-Server
 
 ## App preview
