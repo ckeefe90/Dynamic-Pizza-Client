@@ -25,11 +25,15 @@ export default function LandingPage(props) {
             <p>Keep track of pizzas that you've tried. That way you can re-order the ones that were good and also remember which ones did NOT hit the spot.</p>
         </section>
         <section>
-            <Link to='/Randomize'>Time to randomize!</Link>
-            <button type='button'>Randomize</button>
-        </section>
-        <section>
-            <img width='50%' src={pizzaCalzone} alt='pizza calzone' />
+            <div>
+                <Link to='/Randomize'>Time to randomize!</Link>
+            </div>
+            <div>
+                <button type='button'>Randomize</button>
+            </div>
+            <div>
+                <img width='50%' src={pizzaCalzone} alt='pizza calzone' />
+            </div>
         </section>
     </>)
 }

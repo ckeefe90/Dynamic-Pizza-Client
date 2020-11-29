@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from './UserContext';
+import cartoonPizza from './images/cartoon-pizza.png';
+import './index.css';
 
 export default function Header(props) {
     const userContext = useContext(UserContext)
@@ -10,7 +12,8 @@ export default function Header(props) {
             <nav>
                 <div className='leftNav'>
                     <Link to='/'>
-                        <i class="fas fa-pizza-slice"></i>
+                        <img src={cartoonPizza} alt='cartoon pizza' className='logo
+                    '/>
                         Dynamic Pizza Generator
                     </Link>
                     {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>}
