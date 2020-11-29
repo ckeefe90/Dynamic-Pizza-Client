@@ -26,7 +26,8 @@ export default function SignUp() {
         <div className='SignUp'>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <h3>Create an account so you can track your pizzas</h3>
+                    <h3>Create an account<br />
+                    to save your pizzas</h3>
                 </div>
                 <div>
                     <label htmlFor='email'>Email:</label>

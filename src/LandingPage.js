@@ -17,12 +17,14 @@ export default function LandingPage(props) {
         <section>
             <h3>Save pizzas that you want to try!</h3>
             <img width='50%' src={iLovePizza} alt='I love pizza' />
-            <p>Not looking to order pizza right now but still want to roll the dice? That's totally fine! Save the pizza if it sounds appetizing and come back when you're about to place an order.</p>
+            <p>Not looking to order pizza right now but still want to roll the dice? That's totally fine! <br />
+            Save the pizza if it sounds appetizing and come back when you're about to place an order.</p>
         </section>
         <section>
             <h3>Rate the pizzas that you've tried!</h3>
             <img width='50%' src={mainPizza} alt='main pizza' />
-            <p>Keep track of pizzas that you've tried. That way you can re-order the ones that were good and also remember which ones did NOT hit the spot.</p>
+            <p>Keep track of pizzas that you've tried. <br />
+            That way you can re-order the ones that were good and which ones did NOT hit the spot.</p>
         </section>
         <section>
             <div>
