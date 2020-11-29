@@ -1,117 +1,115 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-#root {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    background-color: #666666;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url(./images/pizza-icons.png);
-    background-size: 500px;
-}
-
-main>* {
-    width: fit-content;
-    background-color: rgba(230, 230, 230, 0.6);
-    border-radius: 4px;
-    padding: 4px;
-}
-
-
-/* Header */
-
-nav {
-    display: flex;
-    padding: 0.5rem;
-    background-color: #888;
-    justify-content: space-between;
-}
-
-.rightNav,
-.leftNav {
-    display: flex;
-    gap: 1rem;
-}
-
-.logo {
-    width: 1rem;
-    margin-right: 0.5rem;
-}
-
-
-/* Links */
-
-a:link,
-a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: red;
-}
-
-
-/* Rating */
-
-.starRating {
-    margin: 0 0.5rem;
-}
-
-.starRating .star {
-    cursor: pointer;
-}
-
-
-/* Footer */
-
-footer {
-    padding: 0.5rem;
-    background-color: #888;
-    text-align: center;
-}
-
-
-/* Sign Up / Sign In */
-
-.SignUp label,
-.SignIn label {
-    display: block;
-    font-weight: 500;
-}
-
-.SignIn button,
-.SignUp button {
-    margin-top: 1rem;
-}
-
-.SignUp,
-.SignIn {
-    padding: 1rem;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.SignUp img {
-    width: 200px;
-}
-
-.SignIn img {
-    width: 200px;
-}
+  html,
+  body,
+  #root {
+      height: 100%;
+      width: 100%;
+  }
+  
+  body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  
+  #root {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+  }
+  
+  #root main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url(./images/pizza-icons.png);
+      background-size: 500px;
+      background-color: #666666;
+  }
+  
+  main>* {
+      width: fit-content;
+      background-color: rgba(230, 230, 230, 0.6);
+      border-radius: 4px;
+      padding: 4px;
+      margin: 8px;
+  }
+  /* Header */
+  
+  nav {
+      display: flex;
+      padding: 0.5rem;
+      background-color: #888;
+      justify-content: space-between;
+  }
+  
+  .rightNav,
+  .leftNav {
+      display: flex;
+      gap: 1rem;
+  }
+  
+  .logo {
+      width: 1rem;
+      margin-right: 0.5rem;
+  }
+  /* Links */
+  
+  a:link,
+  a:visited {
+      text-decoration: none;
+      color: black;
+  }
+  
+  a:hover {
+      color: red;
+  }
+  /* Rating */
+  
+  .starRating {
+      margin: 0 0.5rem;
+  }
+  
+  .starRating .star {
+      cursor: pointer;
+  }
+  /* Footer */
+  
+  footer {
+      padding: 0.5rem;
+      background-color: #888;
+      text-align: center;
+  }
+  /* Sign Up / Sign In */
+  
+  .SignUp label,
+  .SignIn label {
+      display: block;
+      font-weight: 500;
+  }
+  
+  .SignIn button,
+  .SignUp button {
+      margin-top: 1rem;
+  }
+  
+  .SignUp,
+  .SignIn {
+      padding: 1rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .SignUp img {
+      width: 200px;
+  }
+  
+  .SignIn img {
+      width: 200px;
+  }
