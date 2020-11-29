@@ -38,9 +38,7 @@ export default function SignIn(props) {
                 <button type='submit'>Login</button>
                 <p>Don't have an account? <Link to='/SignUp'>Sign up</Link></p>
             </form>
-        </div>
-        <div className='SignInImage'>
-            <img width='50%' src={pizzaSlice} alt='pizza slice' />
+            <img src={pizzaSlice} alt='pizza slice' />
         </div>
     </>)
 }
