@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import pizzaIngredients from './images/pizza-ingredients.jpg';
 
 export default function Randomize() {
     return (
         <>
             <div>
-                <h1>Let's get started!</h1>
+                <h1>Time to randomize!</h1>
                 <img width='50%' src={pizzaIngredients} alt='pizza ingredients' />
             </div>
+            <div>Want to save the pizza? Don't forget to <Link to='/SignIn'>sign in!</Link></div>
             <div>
                 <h2>Feeling spontaneous?</h2>
                 <h3>Let's randomize everything!</h3>
