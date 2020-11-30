@@ -4,6 +4,7 @@ import pizzas from './images/pizzas.jpg';
 import iLovePizza from './images/pizza-i-love-u.jpg';
 import mainPizza from './images/main-pizza.jpg';
 import pizzaCalzone from './images/pizza-calzone.jpg';
+import cartoonPizza from './images/cartoon-pizza.png';
 
 export default function LandingPage(props) {
     return (<>
@@ -28,10 +29,10 @@ export default function LandingPage(props) {
         </section>
         <section>
             <div>
-                <Link to='/Randomize'>Time to randomize!</Link>
-            </div>
-            <div>
-                <button type='button'>Randomize</button>
+                <Link to='/Randomize'>
+                    <img src={cartoonPizza} alt='cartoon pizza' className='logo
+                    '/><br />
+                    Time to randomize!</Link>
             </div>
             <div>
                 <img width='50%' src={pizzaCalzone} alt='pizza calzone' />

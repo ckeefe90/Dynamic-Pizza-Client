@@ -4,6 +4,7 @@ import PizzaContext from './PizzaContext';
 import Rating from './Rating';
 import { IngredientType } from './Ingredients';
 import UserContext from './UserContext';
+import { useHistory } from 'react-router-dom';
 
 function PizzaName({ name, setName }) {
     if (setName) {
@@ -18,6 +19,7 @@ function PizzaName({ name, setName }) {
 
 export default function Pizza(props) {
     const { user } = useContext(UserContext);
+    const history = useHistory();
     const { savePizza, updatePizza } = useContext(PizzaContext);
     const [name, setName] = useState(props.name);
     const [comments, setComments] = useState(props.comments);
@@ -30,9 +32,7 @@ export default function Pizza(props) {
             updatePizza(props.id, { comments, rating })
                 .catch(() => setError('Unable to save pizza.'))
         } else {
-            // create new pizza
-            console.log("saving", props)
-            savePizza({ ...props, name })
+            savePizza({ ...props, name }, () => history.push('/MyPizzas'))
                 .catch(() => setError('Unable to save pizza.'))
         }
     }

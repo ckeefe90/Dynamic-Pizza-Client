@@ -18,8 +18,8 @@ Users can delete the pizzas.
 
 ### Testing
 
--Mocha
--Chai
+- Mocha
+- Chai
 
 ## Live App
 
