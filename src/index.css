@@ -33,10 +33,17 @@
   
   main>* {
       width: fit-content;
+      max-width: 90%;
       background-color: rgba(230, 230, 230, 0.6);
       border-radius: 4px;
       padding: 4px;
       margin: 8px;
+  }
+  
+  .error {
+      color: darkred;
+      font-style: italic;
+      font-weight: bold;
   }
   /* Header */
   
@@ -66,7 +73,7 @@
   }
   
   a:hover {
-      color: red;
+      color: darkred;
   }
   /* Rating */
   
@@ -112,4 +119,11 @@
   
   .SignIn img {
       width: 200px;
+  }
+  /* Pizza */
+  
+  .pizza {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
   }

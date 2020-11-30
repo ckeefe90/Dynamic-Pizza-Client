@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { config } from 'chai';
+import config from './config';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -10,10 +10,20 @@ import Randomize from './Randomize';
 import PizzaError from './PizzaError';
 import UserContext from './UserContext';
 import PizzaContext from './PizzaContext';
+import MyPizzaList from './MyPizzaList';
 
 class App extends Component {
   state = {
-    pizzas: [],
+    pizzas: [
+      {
+        name: '[placeholder for name]',
+        crust: '[placeholder for crust]',
+        sauce: '[placeholder for sauce]',
+        cheese: '[placeholder for cheese]',
+        meat: '[placeholder for meat]',
+        topping: '[placeholder for topping]'
+      }
+    ],
     error: null,
   };
 
@@ -39,7 +49,7 @@ class App extends Component {
           if (res.ok) {
             return res.json()
           } else
-            throw new Error('Username or password does not match')
+            throw new Error('Username or password does not match!')
         })
         .then(token => {
           localStorage.setItem('user', token)
@@ -53,7 +63,6 @@ class App extends Component {
   }
 
   signUp = (user, cb) => {
-    console.log('config.API_ENDPOINT', config.API_ENDPOINT)
     return fetch(config.API_ENDPOINT + "/signup", {
       method: "POST",
       headers: {
@@ -65,7 +74,7 @@ class App extends Component {
         if (res.ok) {
           return res.json()
         } else
-          throw new Error('Unable to create a new account')
+          throw new Error('Unable to create a new account!')
       })
       .then(token => {
         localStorage.setItem('user', token)
@@ -99,7 +108,7 @@ class App extends Component {
       })
   }
 
-  addPizza = (pizza, cb) => {
+  savePizza = (pizza, cb) => {
     return fetch(config.API_ENDPOINT + "/pizzas", {
       method: "POST",
       headers: {
@@ -183,7 +192,7 @@ class App extends Component {
     const userContextValue = {
       user: this.state.user,
       setUser: this.login,
-      addUser: this.signup,
+      addUser: this.signUp,
       logOut: this.logOut
     }
 
@@ -206,7 +215,7 @@ class App extends Component {
                   <Route path='/SignUp' render={props => <SignUp />} />
                   <Route path='/SignIn' render={props => <SignIn />} />
                   <Route path='/Randomize' render={props => <Randomize />} />
-                  {/* <Route path='/MyPizzaList' render={props => <MyPizzaList />} />  */}
+                  <Route path='/MyPizzas' render={props => <MyPizzaList />} />
                 </Switch>
               </PizzaContext.Provider>
             </main>

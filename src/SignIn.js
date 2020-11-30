@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from './UserContext';
-import pizzaSlice from './images/pizza-slice.jpg'
+import pizzaSlice from './images/pizza-slice.jpg';
+import pizzaOven from './images/pizza-oven.jpg';
 
 export default function SignIn(props) {
     const userContext = useContext(UserContext)
@@ -13,7 +14,7 @@ export default function SignIn(props) {
         e.preventDefault()
         const { email, password } = e.target
         const user = { email: email.value, password: password.value }
-        userContext.setUser(user, () => history.push('/MyPizzaList'))
+        userContext.setUser(user, () => history.push('/MyPizzas'))
             .catch(setError)
     }
 
@@ -23,7 +24,8 @@ export default function SignIn(props) {
                 <div>
                     <h2>Please sign in:</h2>
                     {error && <>
-                        <h3>Oops! Username and password do not match.</h3>
+                        <h4>Oops! Something went up in flames.</h4>
+                        <img width='20%' src={pizzaOven} alt='pizza oven' />
                         <h4>{error.message}</h4>
                     </>}
                 </div>

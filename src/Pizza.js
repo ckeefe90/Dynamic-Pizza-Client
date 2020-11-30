@@ -1,0 +1,80 @@
+import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
+import PizzaContext from './PizzaContext';
+import Rating from './Rating';
+import { IngredientType } from './Ingredients';
+import UserContext from './UserContext';
+
+function PizzaName({ name, setName }) {
+    if (setName) {
+        return <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder='Randomized Pizza'
+        />
+    }
+    return <h3>{name}</h3>
+}
+
+export default function Pizza(props) {
+    const { user } = useContext(UserContext);
+    const { savePizza, updatePizza } = useContext(PizzaContext);
+    const [name, setName] = useState(props.name);
+    const [comments, setComments] = useState(props.comments);
+    const [rating, setRating] = useState(props.rating);
+    const [error, setError] = useState(null);
+    const isSaved = Boolean(props.id);
+
+    function handleSave() {
+        if (isSaved) {
+            updatePizza(props.id, { comments, rating })
+                .catch(() => setError('Unable to save pizza.'))
+        } else {
+            // create new pizza
+            console.log("saving", props)
+            savePizza({ ...props, name })
+                .catch(() => setError('Unable to save pizza.'))
+        }
+    }
+    // pencil &#x1F589;
+    return (
+        <div className='pizza'>
+            {error && <div className='error'>{error}</div>}
+            <PizzaName name={name} setName={!isSaved && setName} />
+            {Object.keys(IngredientType).map((type) => (<div key={type}>
+                <span>{type[0].toUpperCase() + type.substr(1)}: </span>
+                <span>{props[type]}</span>
+            </div>))}
+            {isSaved && <>
+                <div className='comments'>
+                    <label htmlFor='comments'>Comments:</label>
+                    <textarea name='comments' defaultValue={comments} onChange={e => setComments(e.target.value)} />
+                </div>
+                <div className='rating'>
+                    <label>Rating:</label>
+                    <Rating value={rating} onChange={setRating} />
+                </div>
+            </>}
+            <div className='actions'>
+                <button
+                    type='button'
+                    onClick={handleSave}
+                    disabled={(isSaved && props.comments === comments && props.rating === rating) || ((!isSaved && !name) || !user)}
+                >{isSaved ? 'Save Changes' : 'Save Pizza'}</button>
+            </div>
+        </div>
+    )
+}
+
+Pizza.propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    crust: PropTypes.string.isRequired,
+    sauce: PropTypes.string.isRequired,
+    cheese: PropTypes.string.isRequired,
+    meat: PropTypes.string.isRequired,
+    topping: PropTypes.string.isRequired,
+    comments: PropTypes.string,
+    rating: PropTypes.oneOf(['1', '2', '3', '4', '5']),
+    delete: PropTypes.func
+}

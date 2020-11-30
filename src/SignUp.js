@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from './UserContext';
-import cheesyPizza from './images/cheesy-pizza.jpg'
+import cheesyPizza from './images/cheesy-pizza.jpg';
+import pizzaOven from './images/pizza-oven.jpg';
 
 export default function SignUp() {
-
     const userContext = useContext(UserContext);
     const history = useHistory();
     // eslint-disable-next-line no-unused-vars
@@ -18,7 +18,7 @@ export default function SignUp() {
             return
         }
         const user = { email: email.value, password: password.value }
-        userContext.addUser(user, () => history.push('/MyPizzaList'))
+        userContext.addUser(user, () => history.push('/MyPizzas'))
             .catch(setError)
     }
 
@@ -28,6 +28,11 @@ export default function SignUp() {
                 <div>
                     <h3>Create an account<br />
                     to save your pizzas</h3>
+                    {error && <>
+                        <h4>Oops! Something went up in flames.</h4>
+                        <img width='20%' src={pizzaOven} alt='pizza oven' />
+                        <h4>{error.message}</h4>
+                    </>}
                 </div>
                 <div>
                     <label htmlFor='email'>Email:</label>

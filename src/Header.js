@@ -23,8 +23,8 @@ export default function Header(props) {
                     {!userContext.user && <>
                         <Link to='/SignUp'>Sign Up</Link>
                         <Link to='/SignIn'>Sign In</Link>
-                        <a href='/Randomize'>Randomize</a>
                     </>}
+                    <a href='/Randomize'>Randomize</a>
                 </div>
             </nav>
         </header>
