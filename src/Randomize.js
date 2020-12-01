@@ -32,24 +32,28 @@ export default function Randomize() {
     return (
         <>
             <div>
-                <h1>Time to randomize!</h1>
-                <img width='50%' src={pizzaIngredients} alt='pizza ingredients' />
+                <h2>Time to randomize!</h2>
+                <img src={pizzaIngredients} alt='pizza ingredients' />
             </div>
-            <div>Want to save the pizza? Don't forget to <Link to='/SignIn'>sign in!</Link></div>
+            <div>
+                <p>Want to save the pizza? <br />
+                    Don't forget to <Link to='/SignIn'>sign in!</Link>
+                </p>
+            </div>
             <div>
                 <h2>Feeling spontaneous?</h2>
-                <h3>Let's randomize everything!</h3>
+                <h3>Randomize everything!</h3>
                 <button type='button' onClick={() => generateRandomPizza()}>Randomize &#x1F3B2;</button>
             </div>
-            <form onSubmit={handleSubmit}>
-                <h3>Make a few personalizations here:</h3>
+            <form onSubmit={handleSubmit} className='Randomize'>
+                <h3>Make personalizations here:</h3>
                 {Object.keys(IngredientType).map((type) => (<div key={type}>
-                    <label htmlFor={type}>{type[0].toUpperCase() + type.substr(1)}</label>
+                    <label htmlFor={type}>{type[0].toUpperCase() + type.substr(1)}:</label>
                     <input name={type} id={type} placeholder='any' list={`${type}-list`}></input>
                     <datalist key={type} id={`${type}-list`}>
                         {Ingredients[type].map((value, i) => (<option key={i} value={value} />))}
                     </datalist>
-                </div>))}
+                </div>))} <br />
                 <button type='submit'>Show me the pizza!</button>
             </form>
             {pizza && <Pizza {...pizza} />}

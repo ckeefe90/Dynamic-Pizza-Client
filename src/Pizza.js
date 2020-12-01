@@ -44,7 +44,7 @@ export default function Pizza(props) {
             {Object.keys(IngredientType).map((type) => (<div key={type}>
                 <span>{type[0].toUpperCase() + type.substr(1)}: </span>
                 <span>{props[type]}</span>
-            </div>))}
+            </div>))} <br />
             {isSaved && <>
                 <div className='comments'>
                     <label htmlFor='comments'>Comments:</label>
@@ -54,7 +54,7 @@ export default function Pizza(props) {
                     <label>Rating:</label>
                     <Rating value={rating} onChange={setRating} />
                 </div>
-            </>}
+            </>} <br />
             <div className='actions'>
                 <button
                     type='button'

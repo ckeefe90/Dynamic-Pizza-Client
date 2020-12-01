@@ -16,6 +16,8 @@ export default function Header(props) {
                     '/>
                         Dynamic Pizza Generator
                     </Link>
+                </div>
+                <div>
                     {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>}
                 </div>
                 <div className='rightNav'>

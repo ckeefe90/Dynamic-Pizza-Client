@@ -10,6 +10,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-align: center;
   }
   
   code {
@@ -28,7 +29,7 @@
       justify-content: center;
       background-image: url(./images/pizza-icons.png);
       background-size: 450px;
-      background-color: #666666;
+      background-color: rgb(90, 10, 10);
   }
   
   main>* {
@@ -94,7 +95,9 @@
   /* Sign Up / Sign In */
   
   .SignUp label,
-  .SignIn label {
+  .SignIn label,
+  .Randomize label,
+  .comments label {
       display: block;
       font-weight: 500;
   }
@@ -113,10 +116,7 @@
       justify-content: center;
   }
   
-  .SignUp img {
-      width: 200px;
-  }
-  
+  .SignUp img,
   .SignIn img {
       width: 200px;
   }
@@ -126,4 +126,15 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+  }
+  /* Images */
+  
+  img {
+      padding: 5px;
+      width: 250px;
+  }
+  
+  div.container {
+      text-align: center;
+      padding: 10px 20px;
   }

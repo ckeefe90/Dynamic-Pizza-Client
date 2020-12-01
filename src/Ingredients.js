@@ -3,7 +3,7 @@ export const IngredientType = Object.freeze({
     sauce: 'sauce',
     cheese: 'cheese',
     meat: 'meat',
-    topping: 'topping'
+    veggie: 'veggie'
 });
 
 const Ingredients = Object.freeze({
@@ -24,13 +24,16 @@ const Ingredients = Object.freeze({
         'Barbecue'
     ],
     [IngredientType.cheese]: [
+        'None',
+        'Lactose Free',
         'Mozzarella',
         'Parmesan',
         'Feta',
         'Goat cheese',
         'Cheddar',
         'Ricotta',
-        'Provolone'
+        'Provolone',
+        'Extra Cheese'
     ],
     [IngredientType.meat]: [
         'None',
@@ -44,7 +47,7 @@ const Ingredients = Object.freeze({
         'Prosciutto',
         'Salami'
     ],
-    [IngredientType.topping]: [
+    [IngredientType.veggie]: [
         'None',
         'Spinach',
         'Artichoke',
@@ -54,7 +57,7 @@ const Ingredients = Object.freeze({
         'Cherry Tomatoes',
         'Onion',
         'Jalapeños',
-        'Extra Cheese'
+        'Banana Peppers'
     ]
 });
 
