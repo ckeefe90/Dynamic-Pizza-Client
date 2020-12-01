@@ -32,7 +32,8 @@
       background-color: rgb(90, 10, 10);
   }
   
-  main>* {
+  main>*,
+  .pizza {
       width: fit-content;
       max-width: 90%;
       background-color: rgba(230, 230, 230, 0.6);
@@ -125,6 +126,15 @@
       width: 200px;
   }
   /* Pizza */
+  
+  .pizzaList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: unset;
+  }
   
   .pizza {
       display: flex;

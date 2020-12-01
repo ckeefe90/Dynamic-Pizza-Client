@@ -48,8 +48,8 @@ export default function Pizza(props) {
             </div>))} <br />
             {isSaved && <>
                 <div className='comments'>
-                    <label htmlFor='comments'>Comments:</label>
-                    <textarea name='comments' id='comments' defaultValue={comments} onChange={e => setComments(e.target.value)} />
+                    <label htmlFor={`pizza-${props.id}-comments`}>Comments:</label>
+                    <textarea name='comments' id={`pizza-${props.id}-comments`} defaultValue={comments} onChange={e => setComments(e.target.value)} />
                 </div>
                 <div className='rating'>
                     <label>Rating:</label>
