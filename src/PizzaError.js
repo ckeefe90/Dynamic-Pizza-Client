@@ -16,7 +16,7 @@ export default class PizzaError extends Component {
         if (this.state.hasError) {
             return <>
                 <h2>Uh, oh. Something went up in flames.</h2>
-                <img width='30%' src={pizzaFlames} alt='pizza flames' />
+                <img src={pizzaFlames} alt='pizza flames' />
             </>
         }
         return this.props.children;

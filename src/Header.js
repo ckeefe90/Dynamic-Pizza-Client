@@ -14,14 +14,16 @@ export default function Header(props) {
                     <Link to='/'>
                         <img src={cartoonPizza} alt='cartoon pizza' className='logo
                     '/>
-                        Dynamic Pizza Generator
+                    </Link>
+                    <Link to='/'>
+                        Dynamic Pizza
                     </Link>
                 </div>
                 <div>
                     {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>}
                 </div>
                 <div className='rightNav'>
-                    {userContext.user && <Link onClick={userContext.logOut}>Log Out</Link>}
+                    {userContext.user && <Link to='/' onClick={userContext.logOut}>Log Out</Link>}
                     {!userContext.user && <>
                         <Link to='/SignUp'>Sign Up</Link>
                         <Link to='/SignIn'>Sign In</Link>

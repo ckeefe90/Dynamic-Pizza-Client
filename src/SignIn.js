@@ -25,17 +25,17 @@ export default function SignIn(props) {
                     <h2>Please sign in:</h2>
                     {error && <>
                         <h4>Oops! Something went up in flames.</h4>
-                        <img width='20%' src={pizzaOven} alt='pizza oven' />
+                        <img src={pizzaOven} alt='pizza oven' />
                         <h4>{error.message}</h4>
                     </>}
                 </div>
                 <div>
                     <label htmlFor='email'>Email:</label>
-                    <input name='email' required />
+                    <input name='email' id='email' required />
                 </div>
                 <div>
                     <label htmlFor='password'>Password:</label>
-                    <input name='password' type='password' required />
+                    <input name='password' id='password' type='password' required />
                 </div>
                 <button type='submit'>Login</button>
                 <p>Don't have an account? <Link to='/SignUp'>Sign up</Link></p>

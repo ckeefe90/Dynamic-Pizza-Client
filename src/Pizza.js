@@ -25,6 +25,7 @@ export default function Pizza(props) {
     const [comments, setComments] = useState(props.comments);
     const [rating, setRating] = useState(props.rating);
     const [error, setError] = useState(null);
+    const [pendingDelete, setPendingDelete] = useState(false);
     const isSaved = Boolean(props.id);
 
     function handleSave() {
@@ -40,7 +41,7 @@ export default function Pizza(props) {
     return (
         <div className='pizza'>
             {error && <div className='error'>{error}</div>}
-            <PizzaName name={name} setName={!isSaved && setName} />
+            <PizzaName name={name} setName={!isSaved && setName} /> <br />
             {Object.keys(IngredientType).map((type) => (<div key={type}>
                 <span>{type[0].toUpperCase() + type.substr(1)}: </span>
                 <span>{props[type]}</span>
@@ -48,7 +49,7 @@ export default function Pizza(props) {
             {isSaved && <>
                 <div className='comments'>
                     <label htmlFor='comments'>Comments:</label>
-                    <textarea name='comments' defaultValue={comments} onChange={e => setComments(e.target.value)} />
+                    <textarea name='comments' id='comments' defaultValue={comments} onChange={e => setComments(e.target.value)} />
                 </div>
                 <div className='rating'>
                     <label>Rating:</label>
@@ -61,6 +62,7 @@ export default function Pizza(props) {
                     onClick={handleSave}
                     disabled={(isSaved && props.comments === comments && props.rating === rating) || ((!isSaved && !name) || !user)}
                 >{isSaved ? 'Save Changes' : 'Save Pizza'}</button>
+                {isSaved && <button type='button' onClick={() => pendingDelete ? props.delete(props.id) : setPendingDelete(true)}>{!pendingDelete ? "Delete Pizza" : "Confirm delete"}</button>}
             </div>
         </div>
     )

@@ -33,10 +33,10 @@ export default function LandingPage(props) {
         <section>
             <div className='description'>
                 <h3>Rate the pizzas that you've tried!</h3>
+                <img src={mainPizza} alt='main pizza' />
                 <p>Keep track of pizzas that you've tried. <br />
             Re-order the ones that were good.<br />
             Avoid ones that did NOT hit the spot.</p>
-                <img src={mainPizza} alt='main pizza' />
             </div>
         </section>
         <section>

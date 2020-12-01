@@ -30,7 +30,7 @@ export default function SignUp() {
                     to save your pizzas</h3>
                     {error && <>
                         <h4>Oops! Something went up in flames.</h4>
-                        <img width='20%' src={pizzaOven} alt='pizza oven' />
+                        <img src={pizzaOven} alt='pizza oven' />
                         <h4>{error.message}</h4>
                     </>}
                 </div>
@@ -49,7 +49,7 @@ export default function SignUp() {
                 <button type='submit'>Sign-up!</button>
                 <p>Already have an account? <Link to='/SignIn'>Sign in</Link></p>
             </form>
-            <img width='50%' src={cheesyPizza} alt='cheesy pizza' />
+            <img src={cheesyPizza} alt='cheesy pizza' />
         </div>
     </>)
 }
