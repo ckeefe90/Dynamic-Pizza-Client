@@ -20,7 +20,8 @@ export default function Header(props) {
                     </Link>
                 </div>
                 <div>
-                    {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>}
+                    {userContext.user && <Link to='/MyPizzas'>My Pizzas</Link>} <br />
+                    <a href='/Randomize'>&#x1F3B2; Randomize &#x1F3B2;</a>
                 </div>
                 <div className='rightNav'>
                     {userContext.user && <Link to='/' onClick={userContext.logOut}>Log Out</Link>}
@@ -28,7 +29,6 @@ export default function Header(props) {
                         <Link to='/SignUp'>Sign Up</Link>
                         <Link to='/SignIn'>Sign In</Link>
                     </>}
-                    <a href='/Randomize'>Randomize</a>
                 </div>
             </nav>
         </header>

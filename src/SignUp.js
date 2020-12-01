@@ -47,7 +47,11 @@ export default function SignUp() {
                     <input name='confirmPassword' id='confirmPassword' type='password' required />
                 </div>
                 <button type='submit'>Sign-up!</button>
-                <p>Already have an account? <Link to='/SignIn'>Sign in</Link></p>
+                <p>Already have an account? <Link to='/SignIn'>Sign in</Link></p> <br />
+                <p>Don't want to create an account?</p>
+                <p>You can use the demo credentials below!</p>
+                <p>E-mail: demo@credentials.com</p>
+                <p>Password: test123</p>
             </form>
             <img src={cheesyPizza} alt='cheesy pizza' />
         </div>

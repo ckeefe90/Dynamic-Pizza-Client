@@ -43,10 +43,11 @@ export default function Randomize() {
             <div>
                 <h2>Feeling spontaneous?</h2>
                 <h3>Randomize everything!</h3>
-                <button type='button' onClick={() => generateRandomPizza()}>Randomize &#x1F3B2;</button>
+                <button type='button' onClick={() => generateRandomPizza()}>&#x1F3B2; Randomize &#x1F3B2;</button>
             </div>
             <form onSubmit={handleSubmit} className='Randomize'>
                 <h3>Make personalizations here:</h3>
+                <p>You can type in an option if it's not listed!</p>
                 {Object.keys(IngredientType).map((type) => (<div key={type}>
                     <label htmlFor={type}>{type[0].toUpperCase() + type.substr(1)}:</label>
                     <input name={type} id={type} placeholder='any' list={`${type}-list`}></input>
